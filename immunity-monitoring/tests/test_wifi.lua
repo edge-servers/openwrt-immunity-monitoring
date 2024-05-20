@@ -1,5 +1,5 @@
 package.path = package.path ..
-                 ";../files/lib/openwisp-monitoring/?.lua;../files/sbin/?.lua"
+                 ";../files/lib/immunity-monitoring/?.lua;../files/sbin/?.lua"
 
 local cjson = require("cjson")
 local luaunit = require('luaunit')

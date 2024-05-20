@@ -1,4 +1,4 @@
-package.path = package.path .. ";../files/lib/openwisp-monitoring/?.lua"
+package.path = package.path .. ";../files/lib/immunity-monitoring/?.lua"
 
 local luaunit = require('luaunit')
 
@@ -8,11 +8,11 @@ TestUtils = {}
 
 function TestUtils.testSplitFunction()
   -- When pattern is present
-  luaunit.assertEquals(utils.split("OpenWISP", "n"), {"Ope", "WISP"})
-  luaunit.assertEquals(utils.split("OpenWISP", "WISP"), {"Open"})
+  luaunit.assertEquals(utils.split("Immunity", "n"), {"Ope", "WISP"})
+  luaunit.assertEquals(utils.split("Immunity", "WISP"), {"Open"})
 
   -- When pattern is not available
-  luaunit.assertEquals(utils.split("OpenWISP", "a"), {"OpenWISP"})
+  luaunit.assertEquals(utils.split("Immunity", "a"), {"Immunity"})
 end
 
 function TestUtils.testHasValue()
@@ -28,11 +28,11 @@ end
 
 function TestUtils.testStartsWith()
   -- When string starts with the substring given
-  luaunit.assertEquals(utils.starts_with("OpenWISP", "Open"), true)
+  luaunit.assertEquals(utils.starts_with("Immunity", "Open"), true)
   luaunit.assertEquals(utils.starts_with("NetJSON", "Net"), true)
 
   -- when string doesn't starts with the substring given
-  luaunit.assertEquals(utils.starts_with("OpenWISP", "Ov"), false)
+  luaunit.assertEquals(utils.starts_with("Immunity", "Ov"), false)
 end
 
 function TestUtils.testTableEmpty()
@@ -54,10 +54,10 @@ function TestUtils.testArrayConcat()
 end
 
 function TestUtils.testDictMerge()
-  luaunit.assertEquals(utils.dict_merge({['1'] = 'OpenWISP'}, {['3'] = 'NetJSON'}),
-    {["1"] = "OpenWISP", ["3"] = "NetJSON"})
-  luaunit.assertEquals(utils.dict_merge({['1'] = 'OpenWISP'}, {['1'] = 'NetJSON'}),
-    {["1"] = "OpenWISP"})
+  luaunit.assertEquals(utils.dict_merge({['1'] = 'Immunity'}, {['3'] = 'NetJSON'}),
+    {["1"] = "Immunity", ["3"] = "NetJSON"})
+  luaunit.assertEquals(utils.dict_merge({['1'] = 'Immunity'}, {['1'] = 'NetJSON'}),
+    {["1"] = "Immunity"})
 end
 
 function TestUtils.testIsExcluded()

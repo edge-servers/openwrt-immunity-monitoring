@@ -1,4 +1,4 @@
-package.path = package.path .. ";../files/lib/openwisp-monitoring/?.lua" ..
+package.path = package.path .. ";../files/lib/immunity-monitoring/?.lua" ..
                  ";../files/lib/?.lua"
 
 local luaunit = require('luaunit')

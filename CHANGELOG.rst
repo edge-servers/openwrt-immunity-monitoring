@@ -12,7 +12,7 @@ Change log
 First release. Features:
 
 - ``netjson-monitoring`` package
-- ``openwisp-monitoring`` package
+- ``immunity-monitoring`` package
 - resilient metric sending:
   when the device cannot communicate with the server, the metrics are
   stored in memory until there's enough free memory and sent later

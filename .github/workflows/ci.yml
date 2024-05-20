@@ -23,7 +23,7 @@ jobs:
           python-version: "3.8"
 
       - name: Install Python dependencies
-        run: pip install openwisp-utils[qa]
+        run: pip install immunity-utils[qa]
 
       - name: Install Development dependencies
         run: sudo ./install-dev.sh
@@ -45,7 +45,7 @@ jobs:
 
       - name: Upload Coverage
         run: |
-          cd openwisp-monitoring/tests
+          cd immunity-monitoring/tests
           luacov-coveralls -v
         env:
           COVERALLS_REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -105,12 +105,12 @@ jobs:
         with:
           project_id: ${{ secrets.GCS_PROJECT_ID }}
 
-      - name: Upload compiled packages to downloads.openwisp.io
+      - name: Upload compiled packages to downloads.immunity.io
         if: ${{ github.event_name=='push' }}
         run: |
           gsutil -m rsync -r ${{ env.SRC_URL }} ${{ env.DST_URL }}
           gsutil -m rsync -r -d ${{ env.SRC_URL }} ${{ env.LATEST_URL }}
         env:
-          SRC_URL: ${{ env.DOWNLOADS_DIR }}/${{ env.START_TIME }}/openwisp_monitoring
-          DST_URL: gs://${{ secrets.GCS_DOWNLOADS_BUCKET_NAME }}/openwisp-monitoring/${{ env.START_TIME }}-${{ env.COMMIT_SHA }}
-          LATEST_URL: gs://${{ secrets.GCS_DOWNLOADS_BUCKET_NAME }}/openwisp-monitoring/latest
+          SRC_URL: ${{ env.DOWNLOADS_DIR }}/${{ env.START_TIME }}/immunity_monitoring
+          DST_URL: gs://${{ secrets.GCS_DOWNLOADS_BUCKET_NAME }}/immunity-monitoring/${{ env.START_TIME }}-${{ env.COMMIT_SHA }}
+          LATEST_URL: gs://${{ secrets.GCS_DOWNLOADS_BUCKET_NAME }}/immunity-monitoring/latest

@@ -1,16 +1,16 @@
 #!/bin/bash
 set -e
 
-luacheck ./openwisp-monitoring/ -a
+luacheck ./immunity-monitoring/ -a
 
 # will be 1 by default when run through github actions
 CI=${CI:-0}
 
 if [ "$CI" -eq "1" ]; then
 	# copy files in github actions so that shell formatter can check for them
-	cp openwisp-monitoring/files/monitoring.agent monitoring_agent
-	cp openwisp-monitoring/files/monitoring.init monitoring_init
-	cp openwisp-monitoring/files/openwisp-monitoring.hotplug monitoring_hotplug
+	cp immunity-monitoring/files/monitoring.agent monitoring_agent
+	cp immunity-monitoring/files/monitoring.init monitoring_init
+	cp immunity-monitoring/files/immunity-monitoring.hotplug monitoring_hotplug
 else
 	# check scripts formaating
 	shellcheck \
@@ -19,17 +19,17 @@ else
 		run-qa-checks \
 		runbuild \
 		runtests \
-		./openwisp-monitoring/files/monitoring.init \
-		./openwisp-monitoring/files/monitoring.agent \
-		./openwisp-monitoring/files/netjson-monitoring \
-		./openwisp-monitoring/files/openwisp-monitoring.hotplug
+		./immunity-monitoring/files/monitoring.init \
+		./immunity-monitoring/files/monitoring.agent \
+		./immunity-monitoring/files/netjson-monitoring \
+		./immunity-monitoring/files/immunity-monitoring.hotplug
 
 	shfmt -d .
-	shfmt -d openwisp-monitoring/files/monitoring.agent
-	shfmt -d openwisp-monitoring/files/monitoring.init
+	shfmt -d immunity-monitoring/files/monitoring.agent
+	shfmt -d immunity-monitoring/files/monitoring.init
 fi
 
-openwisp-qa-check \
+immunity-qa-check \
 	--skip-checkmigrations \
 	--skip-isort \
 	--skip-flake8 \

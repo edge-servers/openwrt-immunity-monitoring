@@ -3,14 +3,14 @@ set -e
 
 # format shell scripts
 shfmt -w -l .
-shfmt -w -l openwisp-monitoring/files/monitoring.agent
-shfmt -w -l openwisp-monitoring/files/monitoring.init
-shfmt -w -l openwisp-monitoring/files/openwisp-monitoring.hotplug
+shfmt -w -l immunity-monitoring/files/monitoring.agent
+shfmt -w -l immunity-monitoring/files/monitoring.init
+shfmt -w -l immunity-monitoring/files/immunity-monitoring.hotplug
 
 # format lua files
-cd openwisp-monitoring/
+cd immunity-monitoring/
 lua-format -i --config=luaformat.config \
 	files/sbin/*.lua \
-	files/lib/openwisp-monitoring/*.lua \
+	files/lib/immunity-monitoring/*.lua \
 	tests/*.lua \
 	tests/test_files/*.lua

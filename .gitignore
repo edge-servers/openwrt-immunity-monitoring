@@ -1,6 +1,6 @@
 # Exclude luacov stats files
-openwisp-monitoring/tests/luacov.stats.out
-openwisp-monitoring/tests/luacov.report.out
+immunity-monitoring/tests/luacov.stats.out
+immunity-monitoring/tests/luacov.report.out
 
 # Compiled Lua sources
 luac.out
