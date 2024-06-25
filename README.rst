@@ -2,8 +2,10 @@
 Immunity Monitoring OpenWrt package
 ===================================
 
-.. image:: https://github.com/edge-servers/openwrt-immunity-monitoring/workflows/OpenWRT%20OPENWISP%20MONITORING%20CI%20Build/badge.svg?branch=master
-   :target: https://github.com/edge-servers/openwrt-immunity-monitoring/actions?query=OpenWRT+OPENWISP+MONITORING+CI+Build%22
+.. image:: https://github.com/edge-servers/openwrt-immunity-monitoring/workflows/OpenWRT%20IMMUNITY
+%20MONITORING%20CI%20Build/badge.svg?branch=master
+   :target: https://github.com/edge-servers/openwrt-immunity-monitoring/actions?query=OpenWRT+IMMUNITY
++MONITORING+CI+Build%22
    :alt: CI build status
 
 .. image:: https://coveralls.io/repos/github/immunity/openwrt-immunity-monitoring/badge.svg

@@ -1,4 +1,5 @@
-name: OpenWRT OPENWISP MONITORING CI Build
+name: OpenWRT IMMUNITY
+ MONITORING CI Build
 
 on:
   push:
